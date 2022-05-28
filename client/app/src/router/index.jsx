@@ -21,15 +21,16 @@ export default function Router() {
 				<Stack.Screen
 					key={route.name}
 					name={route.name}
-					component={(props) => (
+					options={route.options}
+				>
+					{(props) => (
 						<Container>
 							<Header />
 							<route.component />
 							<Footer active={route.name} {...props} />
 						</Container>
 					)}
-					options={route.options}
-				/>
+				</Stack.Screen>
 			))}
 		</Stack.Navigator>
 	);

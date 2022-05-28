@@ -1,5 +1,5 @@
 export default {
-	name: "UNDEFINED",
+	name: "HOLDON",
 	version: "1.0.0",
 	colors: {
 		primary: "#AA95D0",

@@ -1,10 +1,17 @@
 import { View, Text } from "react-native";
-import React from "react";
+import { SvgXml } from "react-native-svg";
+import styled from "styled-components/native";
+import config from "../config";
+import Icon from "../../assets/icon.js";
+import { ChevronLeft, Bell } from "react-native-feather";
+import { TouchableOpacity } from "react-native";
+import Header from "../components/Header";
 
 export default function Home() {
 	return (
 		<View>
-			<Text>Home</Text>
+			<Text>Olá, Nome</Text>
+			<Text>Como você está se sentindo hoje?</Text>
 		</View>
 	);
 }

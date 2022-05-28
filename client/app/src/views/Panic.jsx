@@ -3,6 +3,7 @@ import React from "react";
 import { Title, SubTitle } from "../styles";
 import config from "../config";
 import styled from "styled-components/native";
+import { Linking } from "react-native";
 export default function Panic() {
 	return (
 		<View>
@@ -29,7 +30,14 @@ export default function Panic() {
 					Se você está tendo uma crise de ansiedade leia atentamente!
 				</SubTitle>
 			</ListWrapper>
-			<Button>
+			<Button
+				onPress={() => {
+					// https://api.whatsapp.com/send?phone=555183599300&text=Tudo%20bem?%20Vi%20seu%20site%20e%20queria%20saber%20um%20pouco%20mais!
+					Linking.openURL(
+						`https://api.whatsapp.com/send?phone=555183599300&text=Tudo%20bem?%20Vi%20seu%20site%20e%20queria%20saber%20um%20pouco%20mais!`
+					);
+				}}
+			>
 				<Text style={{ color: "#FFF", fontSize: 24 }}>SOCORRO</Text>
 			</Button>
 		</View>

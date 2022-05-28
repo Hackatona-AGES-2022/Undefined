@@ -3,6 +3,7 @@ export default {
 	version: "1.0.0",
 	colors: {
 		primary: "#AA95D0",
+		disabled: "#CBCBCB",
 		"purple.450": "#B5A8DD",
 		"purple.500": "#AA95D0",
 		"purple.750": "#6B5E90",

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { routes } from "./routes";
 import styled from "styled-components/native";
 import { getStatusBarHeight } from "react-native-status-bar-height";
+import Footer from "../components/Footer";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,10 +21,11 @@ export default function Router() {
 				<Stack.Screen
 					key={route.name}
 					name={route.name}
-					component={() => (
+					component={(props) => (
 						<Container>
 							<Header />
 							<route.component />
+							<Footer active={route.name} {...props} />
 						</Container>
 					)}
 					options={route.options}

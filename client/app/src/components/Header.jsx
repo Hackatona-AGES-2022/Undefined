@@ -5,13 +5,22 @@ import Icon from "../../assets/icon.js";
 import { ChevronLeft, Bell } from "react-native-feather";
 import { TouchableOpacity } from "react-native";
 
-export default function Header({ back }) {
+export default function Header({ back, navigation: { goBack } }) {
 	return (
 		<Container>
 			<IconWrapper>
 				{back && (
-					<TouchableOpacity onPress={back}>
-						<ChevronLeft stroke={config.colors.primary} strokeWidth="2" />
+					<TouchableOpacity
+						onPress={() => {
+							goBack();
+						}}
+					>
+						<ChevronLeft
+							width={30}
+							height={30}
+							stroke={config.colors.primary}
+							strokeWidth="2"
+						/>
 					</TouchableOpacity>
 				)}
 			</IconWrapper>

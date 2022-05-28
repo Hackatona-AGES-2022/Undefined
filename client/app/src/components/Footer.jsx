@@ -6,7 +6,7 @@ export default function Footer({ navigation, active }) {
 	return (
 		<Container>
 			<IconWrapper>
-				{active === "home" ? (
+				{active.includes("home") ? (
 					<Touchable
 						onPress={() => {
 							navigation.navigate("home");
@@ -29,7 +29,7 @@ export default function Footer({ navigation, active }) {
 				)}
 			</IconWrapper>
 			<IconWrapper>
-				{active === "panic" ? (
+				{active.includes("panic") ? (
 					<Touchable
 						onPress={() => {
 							navigation.navigate("panic");
@@ -53,7 +53,7 @@ export default function Footer({ navigation, active }) {
 				)}
 			</IconWrapper>
 			<IconWrapper>
-				{active === "configurations" ? (
+				{active.includes("configurations") ? (
 					<Touchable
 						onPress={() => {
 							navigation.navigate("configurations");

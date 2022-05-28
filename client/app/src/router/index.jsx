@@ -25,9 +25,9 @@ export default function Router() {
 				>
 					{(props) => (
 						<Container>
-							<Header />
+							<Header back={route.hasParent} {...props} />
 							<ScrollView>
-								<route.component />
+								<route.component {...props} />
 							</ScrollView>
 							<Footer active={route.name} {...props} />
 						</Container>

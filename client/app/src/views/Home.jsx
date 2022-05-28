@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import MoodPicker from "../components/MoodPicker";
 import ActivityPicker from "../components/ActivityPicker";
 import { Title, SubTitle } from "../styles";
-export default function Home() {
+export default function Home({ navigation }) {
 	return (
 		<Container>
 			<Title>Olá, Nome</Title>
@@ -11,7 +11,7 @@ export default function Home() {
 			<MoodPicker />
 			<Title>Atividades para você</Title>
 			<SubTitle>Uma seleção especial para melhorar seu mood.</SubTitle>
-			<ActivityPicker />
+			<ActivityPicker navigation={navigation} />
 		</Container>
 	);
 }

@@ -19,15 +19,13 @@ export default function Panic() {
 				</SubTitle>
 			</ListWrapper>
 			<ListWrapper>
-				<ListTitle>2. Olhe ao seu redor</ListTitle>
-				<SubTitle>
-					Se você está tendo uma crise de ansiedade leia atentamente!
-				</SubTitle>
+				<ListTitle>2. Diminua a respiração</ListTitle>
+				<SubTitle>Enspire, 1... 2... 3..., expire 1... 2... 3...</SubTitle>
 			</ListWrapper>
 			<ListWrapper>
-				<ListTitle>3. Olhe ao seu redor</ListTitle>
+				<ListTitle>3. Relaxe os músculos</ListTitle>
 				<SubTitle>
-					Se você está tendo uma crise de ansiedade leia atentamente!
+					Comigo: Relaxe a cabeça, relaxe os músculos, relaxe os braços,
 				</SubTitle>
 			</ListWrapper>
 			<Button

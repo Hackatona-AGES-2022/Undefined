@@ -1,12 +1,18 @@
 import styled from "styled-components/native";
 import Card from "./Card";
-export default function MoodCard({ Icon, text }) {
+import config from "../config";
+export default function MoodCard({ Icon, text, active }) {
 	return (
 		<Container>
-			<Card>
+			<Card active={active} mood>
 				<ContentWrapper>
-					<Icon height={30} width={30} stroke="#fff" strokeWidth="2" />
-					<IconText>{text}</IconText>
+					<Icon
+						height={30}
+						width={30}
+						stroke={!active ? config.colors.primary : "#fff"}
+						strokeWidth="2"
+					/>
+					<IconText active={!active}>{text}</IconText>
 				</ContentWrapper>
 			</Card>
 		</Container>
@@ -22,7 +28,7 @@ const ContentWrapper = styled.View`
 	height: 100%;
 `;
 const IconText = styled.Text`
-	color: #fff;
+	color: ${(props) => (props.active ? config.colors.primary : "#fff")};
 	font-size: 14px;
 	font-weight: 600;
 	margin-top: 15px;

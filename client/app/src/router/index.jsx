@@ -26,7 +26,9 @@ export default function Router() {
 					{(props) => (
 						<Container>
 							<Header />
-							<route.component />
+							<ScrollView>
+								<route.component />
+							</ScrollView>
 							<Footer active={route.name} {...props} />
 						</Container>
 					)}
@@ -38,4 +40,8 @@ export default function Router() {
 const Container = styled.View`
 	flex: 1;
 	padding: ${getStatusBarHeight(true) || 20}px 20px;
+	overflow: scroll;
+`;
+const ScrollView = styled.ScrollView`
+	margin-bottom: 50px;
 `;

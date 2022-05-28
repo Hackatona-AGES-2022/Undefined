@@ -20,4 +20,5 @@ const Container = styled.View`
 	justify-content: space-between;
 	width: 100%;
 	margin-top: 30px;
+	margin-bottom: 50px;
 `;

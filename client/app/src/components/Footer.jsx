@@ -91,6 +91,7 @@ const Container = styled.View`
 	left: 0;
 	right: 0;
 	padding: 0 20px;
+	padding-bottom: 10px;
 `;
 const IconWrapper = styled.View`
 	align-items: center;

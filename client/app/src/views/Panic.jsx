@@ -34,7 +34,7 @@ export default function Panic() {
 				onPress={() => {
 					// https://api.whatsapp.com/send?phone=555183599300&text=Tudo%20bem?%20Vi%20seu%20site%20e%20queria%20saber%20um%20pouco%20mais!
 					Linking.openURL(
-						`https://api.whatsapp.com/send?phone=555183599300&text=Tudo%20bem?%20Vi%20seu%20site%20e%20queria%20saber%20um%20pouco%20mais!`
+						`https://api.whatsapp.com/send?phone=5551986127959&text=Estou%20tendo%20uma%20crise%20de%20panico!`
 					);
 				}}
 			>

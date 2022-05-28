@@ -1,12 +1,24 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SubTitle, Title } from "../styles";
 import styled from "styled-components/native";
 import config from "../config";
 import { PlusCircle } from "react-native-feather";
 import DiaryCard from "../components/DiaryCard";
+import { AsyncStorage } from "react-native";
+import { NavigationContainer, useIsFocused } from "@react-navigation/native";
 
-export default function Diary() {
+export default function Diary({ navigation, route }) {
+	const isFocused = useIsFocused();
+
+	const [diary, setDiary] = useState([]);
+	useEffect(() => {
+		AsyncStorage.getItem("diary").then((value) => {
+			const data = JSON.parse(value);
+			setDiary(data);
+		});
+	}, [isFocused]);
+
 	return (
 		<Container>
 			<TitleWrapper>
@@ -14,15 +26,34 @@ export default function Diary() {
 					<Title>Diário da Gratidão</Title>
 					<SubTitle>Veja como você tem evoluido!</SubTitle>
 				</View>
-				<TouchableOpacity>
+				<TouchableOpacity
+					onPress={() => {
+						navigation.navigate("home.add-diary");
+					}}
+				>
 					<PlusCircle size={50} color={config.colors.primary} />
 				</TouchableOpacity>
 			</TitleWrapper>
-			<DiaryCard
-				date={new Date()}
-				title="Pensamento Diário"
-				subtitle="Hoje meu dia foi triste 12312312"
-			/>
+			{diary?.length ? (
+				diary.map((item) => {
+					return (
+						<TouchableOpacity
+							onPress={() => {
+								navigation.navigate("home.add-diary", { id: item.id });
+							}}
+						>
+							<DiaryCard
+								key={item.id}
+								date={new Date(item?.createdAt)}
+								title={item?.title}
+								subtitle={item?.content}
+							/>
+						</TouchableOpacity>
+					);
+				})
+			) : (
+				<Text>Ainda não há nada por aqui</Text>
+			)}
 		</Container>
 	);
 }

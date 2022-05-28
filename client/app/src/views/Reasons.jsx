@@ -4,7 +4,7 @@ import React from "react";
 export default function Reasons() {
 	return (
 		<View>
-			<Text>Reasons</Text>
+			<Text>⚠️ Esse lugar está interditado ⚠️</Text>
 		</View>
 	);
 }

@@ -17,7 +17,9 @@ export default function DiaryCard({ title, subtitle, date }) {
 					<Center style={{ padding: 20 }}>
 						<Title>{title}</Title>
 						<SubTitle>
-							{subtitle.length > 28 && subtitle.substring(0, 26) + "..."}
+							{subtitle.length > 28
+								? subtitle.substring(0, 26) + "..."
+								: subtitle}
 						</SubTitle>
 					</Center>
 				</ContentWrapper>

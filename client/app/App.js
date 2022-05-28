@@ -77,8 +77,20 @@ async function schedulePushNotification() {
 			data: selected.data,
 		},
 		trigger: {
-			hour: 9,
-			minute: 55,
+			hour: 10,
+			minute: 10,
+			repeats: true,
+		},
+	});
+	await Notifications.scheduleNotificationAsync({
+		content: {
+			title: selected.title,
+			body: selected.body,
+			data: selected.data,
+		},
+		trigger: {
+			hour: 20,
+			minute: 20,
 			repeats: true,
 		},
 	});
